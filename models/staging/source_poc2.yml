@@ -1,0 +1,100 @@
+version: 2
+
+sources:
+  - name: sample_poc
+    database: raw
+    schema: sample_poc
+    tables:
+      - name: t_tab_cases
+        columns: 
+          - name: case_key
+            description: number(10)
+          - name: act_run_id
+            description: number(15,2)
+          - name: sysid
+            description: varchar(3)
+          - name: mandt
+            description: number(10)
+          - name: ebeln
+            description: varchar(5)
+          - name: ebelp
+            description: varchar(10)
+          - name: srm_sysid
+            description: varchar(3)
+          - name: srm_mandt
+            description: number(10)
+          - name: guid_sch
+            description: varchar(10)
+          - name: guid_sci
+            description: varchar(10)
+          - name: erp
+            description: varchar(5)
+          - name: guid_poh
+            description: varchar(10)
+          - name: guid_poi
+            description: varchar(10)
+      - name: t_tab_wf_approvals
+        columns:
+          - name: client
+            description: varchar(30)
+          - name: wiid
+            description: varchar(20)
+          - name: item_guid
+            description: varchar(15)
+          - name: resolver_descr
+            description: varchar(25)
+          - name: resolver_name
+            description: varchar(30)
+          - name: ctime
+            description: date
+          - name: step
+            description: varchar(5)
+          - name: status
+            description: varchar(10)
+          - name: etime
+            description: date
+          - name: sysid
+            description: varchar(15)
+      - name: t_tab_bbp_pdigp
+        columns:
+          - name: sysid
+            description: varchar(15)
+          - name: client
+            description: varchar(30)
+          - name: active_item
+            description: varchar(10)
+          - name: guid
+            description: varchar(10)
+      - name: t_tab_bbp_pdhgp
+        columns:
+          - name: sysid
+            description: varchar(15)
+          - name: client
+            description: varchar(30)
+          - name: active_header
+            description: varchar(10)
+          - name: guid
+            description: varchar(10)
+      - name: t_tab_crmd_orderadm_i
+        columns:
+          - name: sysid
+            description: varchar(15)
+          - name: client
+            description: varchar(30)
+          - name: parent
+            description: varchar(10)
+          - name: number_int
+            description: integer
+          - name: guid
+            description: varchar(10)
+          - name: object_type
+            description: varchar(20)
+      - name: t_tab_ttzcu
+        columns:
+          - name: sysid
+            description: varchar(15)
+          - name: mandt
+            description: number(10)
+          - name: tzonesys
+            description: timestamp
+
