@@ -13,9 +13,9 @@ with projection_marketsegment_tf as (
                market_segment__c,
                market_sub_segment__c,
                percent_allocation__c,
-               sequence,
+               "sequence",
                precedence
-          from table({{ source('','MKTG_SFDCAccountMarketSegment_TF') }}())
+          from {{ ref('BLV_MKTG_SFDCACCOUNTMARKETSEGMENT_TF') }}
        ),
        proj_user as (
         select meta_iud_flg,
@@ -39,7 +39,7 @@ with projection_marketsegment_tf as (
                projection_marketsegment_tf.market_segment__c as market_segment__c,
                projection_marketsegment_tf.market_sub_segment__c as market_sub_segment__c,
                projection_marketsegment_tf.percent_allocation__c as percent_allocation__c,
-               projection_marketsegment_tf.sequence as sequence,
+               projection_marketsegment_tf."sequence" as "sequence",
                projection_marketsegment_tf.precedence as precedence,
                proj_user.name as createdbyname
           from projection_marketsegment_tf
@@ -61,7 +61,7 @@ with projection_marketsegment_tf as (
                join_createdby.market_segment__c as market_segment__c,
                join_createdby.market_sub_segment__c as market_sub_segment__c,
                join_createdby.percent_allocation__c as percent_allocation__c,
-               join_createdby.sequence as sequence,
+               join_createdby."sequence" as "sequence",
                join_createdby.precedence as precedence,
                join_createdby.createdbyname as createdbyname,
                proj_user.name as lastmodifiedbyname
@@ -91,7 +91,7 @@ with projection_marketsegment_tf as (
                join_lastmodifiedby.market_segment__c as market_segment__c,
                join_lastmodifiedby.market_sub_segment__c as market_sub_segment__c,
                join_lastmodifiedby.percent_allocation__c as percent_allocation__c,
-               join_lastmodifiedby.sequence as sequence,
+               join_lastmodifiedby."sequence" as "sequence",
                join_lastmodifiedby.precedence as precedence,
                join_lastmodifiedby.createdbyname as createdbyname,
                join_lastmodifiedby.lastmodifiedbyname as lastmodifiedbyname,
@@ -123,7 +123,7 @@ with projection_marketsegment_tf as (
                join_account.market_segment__c as market_segment__c,
                join_account.market_sub_segment__c as market_sub_segment__c,
                join_account.percent_allocation__c as percent_allocation__c,
-               join_account.sequence as sequence,
+               join_account."sequence" as "sequence",
                join_account.precedence as precedence,
                join_account.createdbyname as createdbyname,
                join_account.lastmodifiedbyname as lastmodifiedbyname,
@@ -150,6 +150,6 @@ with projection_marketsegment_tf as (
        market_sub_segment__c as marketsubsegment,
        percent_allocation__c as percentallocation,
        precedence as precedence,
-       sequence as marketsegmentsequence,
+       "sequence" as marketsegmentsequence,
        market_segment__c_count as marketsegmentcount
   from join_mktsegcnt
