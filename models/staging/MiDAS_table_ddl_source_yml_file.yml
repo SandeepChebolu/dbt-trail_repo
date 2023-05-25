@@ -1170,7 +1170,7 @@ sources:
           - name: NODEL
             description: VARCHAR(1) | Central deletion block for master record
           - name: DEAR6
-            description: VARCHAR(1) | Indicator: Consumer
+            description: "VARCHAR(1) | Indicator: Consumer"
           - name: CVP_XBLCK
             description: VARCHAR(1) | Business Purpose Completed Flag
           - name: SUFRAMA
