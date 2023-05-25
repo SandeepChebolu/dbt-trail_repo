@@ -47,7 +47,7 @@
                guid_poi,
                left(cast(srm_sysid as NVARCHAR), 3) as sysid,
                left(cast(srm_mandt as NVARCHAR), 3) as client
-          from {{ source('','T_CASES') }}
+          from {{ ref('CV_STG_CASES') }}
          where erp = ''
        ),
        sc_appr2 as (
