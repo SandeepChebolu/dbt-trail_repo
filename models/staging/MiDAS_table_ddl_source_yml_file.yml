@@ -877,7 +877,7 @@ sources:
           - name: DOMVAL_HD
             description: VARCHAR(10) | Language-specific values for domains, upper limit
           - name: DOMVALUE_L
-            description: VARCHAR(10) | Values for Domains: Single Value / Upper Limit
+            description: "VARCHAR(10) | Values for Domains: Single Value / Upper Limit"
           - name: META_UPD_DT
             description: DECIMAL
           - name: CONCAT(DOMNAME, DDLANGUAGE, AS4LOCAL, VALPOS, AS4VERS)
@@ -916,7 +916,7 @@ sources:
           - name: TELFX
             description: VARCHAR(31) | Fax Number
           - name: XCPDK
-            description: VARCHAR(1) | Indicator: Is the account a one-time account?
+            description: "VARCHAR(1) | Indicator: Is the account a one-time account?"
           - name: ADRNR
             description: VARCHAR(10) | Address
           - name: MCOD1
@@ -950,7 +950,7 @@ sources:
           - name: ERNAM
             description: VARCHAR(12) | Name of Person who Created the Object
           - name: EXABL
-            description: VARCHAR(1) | Indicator: Unloading points exist
+            description: "VARCHAR(1) | Indicator: Unloading points exist"
           - name: FAKSD
             description: VARCHAR(2) | Central billing block for customer
           - name: FISKN
@@ -1000,7 +1000,7 @@ sources:
           - name: STCD2
             description: VARCHAR(11) | Tax Number 2
           - name: STKZA
-            description: VARCHAR(1) | Indicator: Business Partner Subject to Equalization Tax?
+            description: "VARCHAR(1) | Indicator: Business Partner Subject to Equalization Tax?"
           - name: STKZU
             description: VARCHAR(1) | Liable for VAT
           - name: TELBX
@@ -1014,17 +1014,17 @@ sources:
           - name: LZONE
             description: VARCHAR(10) | Transportation zone to or from which the goods are delivered
           - name: XZEMP
-            description: VARCHAR(1) | Indicator: Is an alternative payer allowed in document?
+            description: "VARCHAR(1) | Indicator: Is an alternative payer allowed in document?"
           - name: VBUND
             description: VARCHAR(6) | Company ID of trading partner
           - name: STCEG
             description: VARCHAR(20) | VAT Registration Number
           - name: DEAR1
-            description: VARCHAR(1) | Indicator: Competitor
+            description: "VARCHAR(1) | Indicator: Competitor"
           - name: DEAR2
-            description: VARCHAR(1) | Indicator: Sales partner
+            description: "VARCHAR(1) | Indicator: Sales partner"
           - name: DEAR3
-            description: VARCHAR(1) | Indicator: Sales prospect
+            description: "VARCHAR(1) | Indicator: Sales prospect"
           - name: DEAR4
             description: VARCHAR(1) | Indicator for customer type 4
           - name: DEAR5
@@ -1104,7 +1104,7 @@ sources:
           - name: SPERZ
             description: VARCHAR(1) | Payment Block
           - name: ETIKG
-            description: VARCHAR(10) | IS-R Labeling: customer/plant group
+            description: "VARCHAR(10) | IS-R Labeling: customer/plant group"
           - name: CIVVE
             description: VARCHAR(1) | ID for mainly non-military use
           - name: MILVE
@@ -1120,7 +1120,7 @@ sources:
           - name: KDKG5
             description: VARCHAR(2) | Customer condition group 5
           - name: XKNZA
-            description: VARCHAR(1) | Indicator: Alternative payer using account number
+            description: "VARCHAR(1) | Indicator: Alternative payer using account number"
           - name: FITYP
             description: VARCHAR(2) | Tax type
           - name: STCDT
@@ -1140,9 +1140,9 @@ sources:
           - name: CFOPC
             description: VARCHAR(2) | Customer's CFOP category
           - name: TXLW1
-            description: VARCHAR(3) | Tax law: ICMS
+            description: "VARCHAR(3) | Tax law: ICMS"
           - name: TXLW2
-            description: VARCHAR(3) | Tax law: IPI
+            description: "VARCHAR(3) | Tax law: IPI"
           - name: CCC01
             description: VARCHAR(1) | Indicator for biochemical warfare for legal control
           - name: CCC02
@@ -1250,9 +1250,9 @@ sources:
           - name: PSOTL
             description: VARCHAR(20) | Title
           - name: PSOHS
-            description: VARCHAR(6) | House number: is no longer used from Release 4.6B
+            description: "VARCHAR(6) | House number: is no longer used from Release 4.6B"
           - name: PSOST
-            description: VARCHAR(28) | Street: No longer used from Release 4.6B
+            description: "VARCHAR(28) | Street: No longer used from Release 4.6B"
           - name: PSOO1
             description: VARCHAR(50) | Description
           - name: PSOO2
@@ -1430,7 +1430,7 @@ sources:
           - name: KVGR5
             description: VARCHAR(3) | Customer group 5
           - name: BOKRE
-            description: VARCHAR(1) | Indicator: Customer Is Rebate-Relevant
+            description: "VARCHAR(1) | Indicator: Customer Is Rebate-Relevant"
           - name: BOIDT
             description: VARCHAR(8) | Start of validity per.for the rebate index for the customer
           - name: KURST
@@ -1466,7 +1466,7 @@ sources:
           - name: RDOFF
             description: VARCHAR(1) | Switch off rounding?
           - name: AGREL
-            description: VARCHAR(1) | Indicator: Relevant for agency business
+            description: "VARCHAR(1) | Indicator: Relevant for agency business"
           - name: MEGRU
             description: VARCHAR(4) | Unit of Measure Group
           - name: UEBTO
