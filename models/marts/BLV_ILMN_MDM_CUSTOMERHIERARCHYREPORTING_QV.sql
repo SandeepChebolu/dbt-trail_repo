@@ -46,7 +46,7 @@ Join_2: In case if all the CALC column are null or blank then put customer numbe
                cast(to_number(agg_customercount) as INTEGER) as calc_availablehierarchycount 
           from a_createmapcolumn 
         group by client, 
-                 customernumber, 
+                 customernumber 
         having calc_availablehierarchycount > 1
        ), 
        join_1 as (
