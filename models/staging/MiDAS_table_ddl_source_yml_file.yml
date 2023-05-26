@@ -8,9 +8,9 @@ sources:
       - name: ACCOUNT
         columns:
           - name: META_CRT_DT
-            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1/1/1900 0:00)'"
+            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1900-01-01 00:00:00')'"
           - name: META_UPD_DT
-            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1/1/1900 0:00)'"
+            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1900-01-01 00:00:00')'"
           - name: META_IUD_FLG
             description: "VARCHAR(10)"
           - name: META_SRC_NM
@@ -349,9 +349,9 @@ sources:
       - name: MARKET_SEGMENT__C
         columns:
           - name: META_CRT_DT
-            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1/1/1900 0:00)'"
+            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1900-01-01 00:00:00')'"
           - name: META_UPD_DT
-            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1/1/1900 0:00)'"
+            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1900-01-01 00:00:00')'"
           - name: META_IUD_FLG
             description: "VARCHAR(10)"
           - name: META_SRC_NM
@@ -390,9 +390,9 @@ sources:
       - name: MRKTSEGPICKLISTORDER
         columns:
           - name: META_CRT_DT
-            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1/1/1900 0:00)'"
+            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1900-01-01 00:00:00')'"
           - name: META_UPD_DT
-            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1/1/1900 0:00)'"
+            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1900-01-01 00:00:00')'"
           - name: META_IUD_FLG
             description: "VARCHAR(10)"
           - name: META_SRC_NM
@@ -407,9 +407,9 @@ sources:
       - name: RECORDTYPE
         columns:
           - name: META_CRT_DT
-            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1/1/1900 0:00)'"
+            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1900-01-01 00:00:00')'"
           - name: META_UPD_DT
-            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1/1/1900 0:00)'"
+            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1900-01-01 00:00:00')'"
           - name: META_IUD_FLG
             description: "VARCHAR(10)"
           - name: META_SRC_NM
@@ -446,9 +446,9 @@ sources:
       - name: USER
         columns:
           - name: META_CRT_DT
-            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1/1/1900 0:00)'"
+            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1900-01-01 00:00:00')'"
           - name: META_UPD_DT
-            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1/1/1900 0:00)'"
+            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1900-01-01 00:00:00')'"
           - name: META_IUD_FLG
             description: "VARCHAR(10)"
           - name: META_SRC_NM
