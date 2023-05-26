@@ -35,9 +35,9 @@ Join_2: In case if all the CALC column are null or blank then put customer numbe
                customernumber, 
                count(customernumber) as agg_customercount 
           from a_createmapcolumn 
-         where agg_customercount = 1 
-         group by client, 
-                  customernumber
+        group by client, 
+                 customernumber
+		having agg_customercount = 1
        ), 
        aggregation_3 as (
         select client, 
@@ -45,10 +45,9 @@ Join_2: In case if all the CALC column are null or blank then put customer numbe
                count(customernumber) as agg_customercount, 
                cast(to_number(agg_customercount) as INTEGER) as calc_availablehierarchycount 
           from a_createmapcolumn 
-         where calc_availablehierarchycount > 1 
-         group by client, 
-                  customernumber, 
-                  calc_availablehierarchycount
+        group by client, 
+                 customernumber, 
+        having calc_availablehierarchycount > 1
        ), 
        join_1 as (
         select a_createmapcolumn.client as client, 
