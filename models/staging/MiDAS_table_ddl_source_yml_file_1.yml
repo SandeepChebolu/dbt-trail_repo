@@ -1136,7 +1136,7 @@ sources:
           - name: XXIPI
             description: "VARCHAR(1) | Customer is IPI-exempt"
           - name: XSUBT
-            description: "VARCHAR(3) | Customer group for Substituiçao Tributária calculation"
+            description: "VARCHAR(3) | Customer group for Substitui硯 TributᲩa calculation"
           - name: CFOPC
             description: "VARCHAR(2) | Customer's CFOP category"
           - name: TXLW1
@@ -1792,4 +1792,4 @@ sources:
             description: "Primary Key"
             tests:
               - not_null
-              - unique-
+              - unique
