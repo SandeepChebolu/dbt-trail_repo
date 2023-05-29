@@ -1,0 +1,1795 @@
+version: 2 
+
+sources: 
+  - name: REP_ILMN_INFC_SFDC
+    database: RAW
+    schema: REP_ILMN_INFC_SFDC
+    tables: 
+      - name: ACCOUNT
+        columns:
+          - name: META_CRT_DT
+            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1900-01-01 00:00:00')'"
+          - name: META_UPD_DT
+            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1900-01-01 00:00:00')'"
+          - name: META_IUD_FLG
+            description: "VARCHAR(10)"
+          - name: META_SRC_NM
+            description: "VARCHAR(100)"
+          - name: ID
+            description: "VARCHAR(18) | Primary Key"
+            tests:
+              - not_null
+              - unique
+          - name: ISDELETED
+            description: "NUMBER(10, 0)"
+          - name: MASTERRECORDID
+            description: "VARCHAR(18)"
+          - name: NAME
+            description: "VARCHAR(255)"
+          - name: TYPE
+            description: "VARCHAR(40)"
+          - name: RECORDTYPEID
+            description: "VARCHAR(18)"
+          - name: PARENTID
+            description: "VARCHAR(18)"
+          - name: BILLINGSTREET
+            description: "VARCHAR(255)"
+          - name: BILLINGCITY
+            description: "VARCHAR(40)"
+          - name: BILLINGSTATE
+            description: "VARCHAR(80)"
+          - name: BILLINGPOSTALCODE
+            description: "VARCHAR(20)"
+          - name: BILLINGCOUNTRY
+            description: "VARCHAR(80)"
+          - name: BILLINGSTATECODE
+            description: "VARCHAR(10)"
+          - name: BILLINGCOUNTRYCODE
+            description: "VARCHAR(10)"
+          - name: BILLINGLATITUDE
+            description: "DECIMAL"
+          - name: BILLINGLONGITUDE
+            description: "DECIMAL"
+          - name: BILLINGGEOCODEACCURACY
+            description: "VARCHAR(40)"
+          - name: SHIPPINGSTREET
+            description: "VARCHAR(255)"
+          - name: SHIPPINGCITY
+            description: "VARCHAR(40)"
+          - name: SHIPPINGSTATE
+            description: "VARCHAR(80)"
+          - name: SHIPPINGPOSTALCODE
+            description: "VARCHAR(20)"
+          - name: SHIPPINGCOUNTRY
+            description: "VARCHAR(80)"
+          - name: SHIPPINGSTATECODE
+            description: "VARCHAR(10)"
+          - name: SHIPPINGCOUNTRYCODE
+            description: "VARCHAR(10)"
+          - name: SHIPPINGLATITUDE
+            description: "DECIMAL"
+          - name: SHIPPINGLONGITUDE
+            description: "DECIMAL"
+          - name: SHIPPINGGEOCODEACCURACY
+            description: "VARCHAR(40)"
+          - name: PHONE
+            description: "VARCHAR(40)"
+          - name: FAX
+            description: "VARCHAR(40)"
+          - name: ACCOUNTNUMBER
+            description: "VARCHAR(40)"
+          - name: WEBSITE
+            description: "VARCHAR(255)"
+          - name: PHOTOURL
+            description: "VARCHAR(255)"
+          - name: SIC
+            description: "VARCHAR(20)"
+          - name: INDUSTRY
+            description: "VARCHAR(40)"
+          - name: ANNUALREVENUE
+            description: "DECIMAL"
+          - name: NUMBEROFEMPLOYEES
+            description: "NUMBER(10, 0)"
+          - name: OWNERSHIP
+            description: "VARCHAR(40)"
+          - name: TICKERSYMBOL
+            description: "VARCHAR(20)"
+          - name: DESCRIPTION
+            description: "VARCHAR"
+          - name: RATING
+            description: "VARCHAR(40)"
+          - name: SITE
+            description: "VARCHAR(80)"
+          - name: CURRENCYISOCODE
+            description: "VARCHAR(3)"
+          - name: NAMELOCAL
+            description: "VARCHAR(255)"
+          - name: OWNERID
+            description: "VARCHAR(18)"
+          - name: CREATEDDATE
+            description: "TIMESTAMP"
+          - name: CREATEDBYID
+            description: "VARCHAR(18)"
+          - name: LASTMODIFIEDDATE
+            description: "TIMESTAMP"
+          - name: LASTMODIFIEDBYID
+            description: "VARCHAR(18)"
+          - name: SYSTEMMODSTAMP
+            description: "TIMESTAMP"
+          - name: LASTACTIVITYDATE
+            description: "TIMESTAMP"
+          - name: LASTVIEWEDDATE
+            description: "TIMESTAMP"
+          - name: LASTREFERENCEDDATE
+            description: "TIMESTAMP"
+          - name: ISEXCLUDEDFROMREALIGN
+            description: "NUMBER(10, 0)"
+          - name: ISPARTNER
+            description: "NUMBER(10, 0)"
+          - name: CHANNELPROGRAMNAME
+            description: "VARCHAR(255)"
+          - name: CHANNELPROGRAMLEVELNAME
+            description: "VARCHAR(255)"
+          - name: JIGSAW
+            description: "VARCHAR(20)"
+          - name: JIGSAWCOMPANYID
+            description: "VARCHAR(20)"
+          - name: ACCOUNTSOURCE
+            description: "VARCHAR(40)"
+          - name: SICDESC
+            description: "VARCHAR(80)"
+          - name: SVMXC__ACCESS_HOURS__C
+            description: "VARCHAR(18)"
+          - name: SVMXC__BUSINESS_HOURS__C
+            description: "VARCHAR(18)"
+          - name: SVMXC__LATITUDE__C
+            description: "DECIMAL"
+          - name: SVMXC__LONGITUDE__C
+            description: "DECIMAL"
+          - name: SVMXC__PREFERRED_TECHNICIAN__C
+            description: "VARCHAR(18)"
+          - name: APTTUS_CONFIG2__BILLINGCONTACTFILTERCRITERIA__C
+            description: "VARCHAR"
+          - name: APTTUS_CONFIG2__BILLINGCONTACTFORMAT__C
+            description: "VARCHAR(255)"
+          - name: APTTUS_CONFIG2__BILLINGDAYOFMONTH__C
+            description: "VARCHAR(255)"
+          - name: APTTUS_CONFIG2__BILLINGPREFERENCEID__C
+            description: "VARCHAR(18)"
+          - name: APTTUS_CONFIG2__CALENDARCYCLESTART__C
+            description: "VARCHAR(255)"
+          - name: APTTUS_CONFIG2__CERTIFICATEID__C
+            description: "VARCHAR(18)"
+          - name: APTTUS_CONFIG2__CREDITMEMOEMAILTEMPLATE__C
+            description: "VARCHAR(100)"
+          - name: APTTUS_CONFIG2__DEFAULTCREDITMEMOTEMPLATE__C
+            description: "VARCHAR(255)"
+          - name: APTTUS_CONFIG2__DEFAULTINVOICESTATEMENTTEMPLATE__C
+            description: "VARCHAR(255)"
+          - name: APTTUS_CONFIG2__DEFAULTINVOICETEMPLATE__C
+            description: "VARCHAR(255)"
+          - name: APTTUS_CONFIG2__INVOICEEMAILTEMPLATE__C
+            description: "VARCHAR(100)"
+          - name: APTTUS_CONFIG2__PAYMENTTERMID__C
+            description: "VARCHAR(18)"
+          - name: APTTUS_CONFIG2__TAXEXEMPTSTATUS__C
+            description: "VARCHAR(255)"
+          - name: APTTUS_CONFIG2__TAXEXEMPT__C
+            description: "VARCHAR(255)"
+          - name: SVMX_PS_ACTIVE__C
+            description: "NUMBER(10, 0)"
+          - name: SVMX_PS_CONTACT__C
+            description: "VARCHAR(18)"
+          - name: SVMX_PS_CUSTOMERPRIORITY__C
+            description: "VARCHAR(255)"
+          - name: SVMX_PS_EXTERNAL_ID__C
+            description: "VARCHAR(255)"
+          - name: SVMX_PS_HIGH_VALUE_ACCOUNT__C
+            description: "VARCHAR(255)"
+          - name: SVMX_PS_LOCATION__C
+            description: "VARCHAR(18)"
+          - name: SVMX_PS_NUMBEROFLOCATIONS_DEL__C
+            description: "DECIMAL"
+          - name: SVMX_PS_SLAEXPIRATIONDATE__C
+            description: "TIMESTAMP"
+          - name: SVMX_PS_SLA__C
+            description: "VARCHAR(255)"
+          - name: SVMX_PS_TAX_CODE__C
+            description: "VARCHAR(4)"
+          - name: SVMX_PS_TAX__C
+            description: "DECIMAL"
+          - name: SVMX_PS_UPSELLOPPORTUNITY__C
+            description: "VARCHAR(255)"
+          - name: ACCOUNT_GROUP__C
+            description: "VARCHAR(255)"
+          - name: ACCOUNT_LEAD_SOURCE_TEXT_FIELD__C
+            description: "VARCHAR(255)"
+          - name: FIELD_SUPPORT_COUNT_FOR_AUTO_DISPATCH__C
+            description: "DECIMAL"
+          - name: ACCOUNT_STATUS__C
+            description: "VARCHAR(255)"
+          - name: PRODUCT_FAMILY__C
+            description: "VARCHAR"
+          - name: ADDRESS_STATUS__C
+            description: "VARCHAR(255)"
+          - name: PARTNER_REQUEST__C
+            description: "VARCHAR(18)"
+          - name: BUSINESS_UNIT__C
+            description: "VARCHAR(255)"
+          - name: CARE_OF_LOCAL__C
+            description: "VARCHAR(40)"
+          - name: CITY_LOCAL__C
+            description: "VARCHAR(40)"
+          - name: CLINICAL_TYPE__C
+            description: "VARCHAR(255)"
+          - name: COUNTRY_LOCAL__C
+            description: "VARCHAR(255)"
+          - name: REGULATORY_TYPE__C
+            description: "VARCHAR"
+          - name: LEGACY_SFDC_RECORD_ID__C
+            description: "VARCHAR(255)"
+          - name: CUSTOMER_TYPE__C
+            description: "VARCHAR(255)"
+          - name: CUSTOMER_SUB_TYPE__C
+            description: "VARCHAR(255)"
+          - name: DISABLE_MYILMN_CUSTOMER_DASHBOARD_ACCESS__C
+            description: "NUMBER(10, 0)"
+          - name: CARE_OF__C
+            description: "VARCHAR(40)"
+          - name: DISTRICT__C
+            description: "VARCHAR(255)"
+          - name: ERP_CUSTOMER_ID__C
+            description: "VARCHAR(255)"
+          - name: BILLING_ISSUE__C
+            description: "VARCHAR(10)"
+          - name: CREDIT_BLOCK__C
+            description: "VARCHAR(25)"
+          - name: MYILMN_ACCESS_CHANGE_LOG__C
+            description: "VARCHAR"
+          - name: IS_UPDATED_BY_SYSTEM__C
+            description: "NUMBER(10, 0)"
+          - name: PARTNER_ACCOUNT_MANAGER__C
+            description: "VARCHAR(18)"
+          - name: PARTNER_TYPE__C
+            description: "VARCHAR(255)"
+          - name: DELIVERY_BLOCK__C
+            description: "VARCHAR(25)"
+          - name: RE_SUBMISSION_REASON__C
+            description: "VARCHAR(255)"
+          - name: REASON_FOR_CHANGING_MYILMN_ACCESS__C
+            description: "VARCHAR(1000)"
+          - name: MARKET_SEGMENT__C
+            description: "VARCHAR(255)"
+          - name: POPULATION_GENOMICS__C
+            description: "VARCHAR(255)"
+          - name: SVMXC__SM_EXTERNAL_ID__C
+            description: "VARCHAR(255)"
+          - name: STATE_PROVINCE_LOCAL__C
+            description: "VARCHAR(255)"
+          - name: STREET_2_LOCAL__C
+            description: "VARCHAR(40)"
+          - name: STREET_LOCAL__C
+            description: "VARCHAR(80)"
+          - name: FIELD_COMMENTS__C
+            description: "VARCHAR"
+          - name: SUBREGION__C
+            description: "VARCHAR(255)"
+          - name: GLOBAL_GROUP_NUMBER__C
+            description: "VARCHAR(25)"
+          - name: NATIONAL_GROUP_NUMBER__C
+            description: "VARCHAR(25)"
+          - name: TERRITORY_CODE__C
+            description: "VARCHAR(255)"
+          - name: SALES_GROUP_NUMBER__C
+            description: "VARCHAR(25)"
+          - name: TERRITORY_NAME__C
+            description: "VARCHAR(255)"
+          - name: TERRITORY_REGION__C
+            description: "VARCHAR(100)"
+          - name: GLOBAL_GROUP_NAME__C
+            description: "VARCHAR(255)"
+          - name: ZIP_POSTAL_CODE_LOCAL__C
+            description: "VARCHAR(10)"
+          - name: OPEN_OPPORTUNITY_AMOUNT__C
+            description: "DECIMAL"
+          - name: NATIONAL_GROUP_NAME__C
+            description: "VARCHAR(255)"
+          - name: PREFERRED_LANGUAGE__C
+            description: "VARCHAR(255)"
+          - name: CHANNEL_PARTNER_TYPE__C
+            description: "VARCHAR(255)"
+          - name: TIER__C
+            description: "VARCHAR(255)"
+          - name: MARK_FOR_DELETION__C
+            description: "NUMBER(10, 0)"
+          - name: ORDER_BLOCK__C
+            description: "VARCHAR(25)"
+          - name: SALES_BLOCK__C
+            description: "VARCHAR(25)"
+          - name: SUSPENSION_REJECTION_REASON__C
+            description: "VARCHAR"
+          - name: SALES_GROUP_NAME__C
+            description: "VARCHAR(255)"
+          - name: COUNTRY_TEXT__C
+            description: "VARCHAR(50)"
+          - name: EMAIL_CHANNEL_PARTNER__C
+            description: "VARCHAR(80)"
+          - name: FIELD_SUPPORT_IDS__C
+            description: "VARCHAR(255)"
+          - name: STATE_PROVINCE_TEXT__C
+            description: "VARCHAR(50)"
+          - name: ENTITY_ACQUISITION_ID__C
+            description: "VARCHAR(255)"
+          - name: CUSTOMER_SINCE__C
+            description: "TIMESTAMP"
+          - name: OPEN_OFFER_COMPARISON_CUSTOMER__C
+            description: "NUMBER(10, 0)"
+          - name: SIGNED_OPEN_OFFER__C
+            description: "NUMBER(10, 0)"
+          - name: VAD_CHANNEL_PARTNER_TERRITORY__C
+            description: "VARCHAR(255)"
+          - name: CLINICAL_ONCOLOGY_SCREENING_DX_TESTING__C
+            description: "VARCHAR(255)"
+          - name: FOR_PROFIT_COMPANY__C
+            description: "VARCHAR(255)"
+          - name: ONCOLOGY_LAB_MANUFACTURER_COMPARISON__C
+            description: "VARCHAR(255)"
+          - name: PURCHASES_PRODUCTS_SHIPPING_TO_U_S__C
+            description: "VARCHAR(255)"
+          - name: CHINA_HOSPITAL_CLASSIFICATION__C
+            description: "VARCHAR(255)"
+          - name: R_Q_CONTACT_COMPLIANT__C
+            description: "VARCHAR(255)"
+          - name: R_Q_CONTACT_ELIGIBLE__C
+            description: "NUMBER(10, 0)"
+          - name: R_Q_NON_COMPLIANCE_DATE__C
+            description: "TIMESTAMP"
+          - name: SEQUENCING_LIQUID_BX_CANCER_SCREENING__C
+            description: "VARCHAR(255)"
+      - name: MARKET_SEGMENT__C
+        columns:
+          - name: META_CRT_DT
+            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1900-01-01 00:00:00')'"
+          - name: META_UPD_DT
+            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1900-01-01 00:00:00')'"
+          - name: META_IUD_FLG
+            description: "VARCHAR(10)"
+          - name: META_SRC_NM
+            description: "VARCHAR(100)"
+          - name: ID
+            description: "VARCHAR(18) | Primary Key"
+            tests:
+              - not_null
+              - unique
+          - name: ISDELETED
+            description: "NUMBER(10, 0)"
+          - name: NAME
+            description: "VARCHAR(80)"
+          - name: CURRENCYISOCODE
+            description: "VARCHAR(3)"
+          - name: CREATEDDATE
+            description: "TIMESTAMP"
+          - name: CREATEDBYID
+            description: "VARCHAR(18)"
+          - name: LASTMODIFIEDDATE
+            description: "TIMESTAMP"
+          - name: LASTMODIFIEDBYID
+            description: "VARCHAR(18)"
+          - name: SYSTEMMODSTAMP
+            description: "TIMESTAMP"
+          - name: LASTACTIVITYDATE
+            description: "TIMESTAMP"
+          - name: ACCOUNT__C
+            description: "VARCHAR(18)"
+          - name: MARKET_SEGMENT__C
+            description: "VARCHAR(255)"
+          - name: MARKET_SUB_SEGMENT__C
+            description: "VARCHAR"
+          - name: PERCENT_ALLOCATION__C
+            description: "DECIMAL"
+      - name: MRKTSEGPICKLISTORDER
+        columns:
+          - name: META_CRT_DT
+            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1900-01-01 00:00:00')'"
+          - name: META_UPD_DT
+            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1900-01-01 00:00:00')'"
+          - name: META_IUD_FLG
+            description: "VARCHAR(10)"
+          - name: META_SRC_NM
+            description: "VARCHAR(100)"
+          - name: MARKETSEGMENTNAME
+            description: "VARCHAR(255) | Primary Key"
+            tests:
+              - not_null
+              - unique
+          - name: PRECEDENCE
+            description: "NUMBER(10, 0)"
+      - name: RECORDTYPE
+        columns:
+          - name: META_CRT_DT
+            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1900-01-01 00:00:00')'"
+          - name: META_UPD_DT
+            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1900-01-01 00:00:00')'"
+          - name: META_IUD_FLG
+            description: "VARCHAR(10)"
+          - name: META_SRC_NM
+            description: "VARCHAR(100)"
+          - name: ID
+            description: "VARCHAR(18) | Primary Key"
+            tests:
+              - not_null
+              - unique
+          - name: NAME
+            description: "VARCHAR(80)"
+          - name: DEVELOPERNAME
+            description: "VARCHAR(80)"
+          - name: NAMESPACEPREFIX
+            description: "VARCHAR(15)"
+          - name: DESCRIPTION
+            description: "VARCHAR(255)"
+          - name: BUSINESSPROCESSID
+            description: "VARCHAR(18)"
+          - name: SOBJECTTYPE
+            description: "VARCHAR(40)"
+          - name: ISACTIVE
+            description: "NUMBER(10, 0)"
+          - name: CREATEDBYID
+            description: "VARCHAR(18)"
+          - name: CREATEDDATE
+            description: "TIMESTAMP"
+          - name: LASTMODIFIEDBYID
+            description: "VARCHAR(18)"
+          - name: LASTMODIFIEDDATE
+            description: "TIMESTAMP"
+          - name: SYSTEMMODSTAMP
+            description: "TIMESTAMP"
+      - name: USER
+        columns:
+          - name: META_CRT_DT
+            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1900-01-01 00:00:00')'"
+          - name: META_UPD_DT
+            description: "TIMESTAMP | DEFAULT 'TO_TIMESTAMP('1900-01-01 00:00:00')'"
+          - name: META_IUD_FLG
+            description: "VARCHAR(10)"
+          - name: META_SRC_NM
+            description: "VARCHAR(100)"
+          - name: ID
+            description: "VARCHAR(18) | Primary Key"
+            tests:
+              - not_null
+              - unique
+          - name: USERNAME
+            description: "VARCHAR(80)"
+          - name: LASTNAME
+            description: "VARCHAR(80)"
+          - name: FIRSTNAME
+            description: "VARCHAR(40)"
+          - name: NAME
+            description: "VARCHAR(121)"
+          - name: COMPANYNAME
+            description: "VARCHAR(80)"
+          - name: DIVISION
+            description: "VARCHAR(80)"
+          - name: DEPARTMENT
+            description: "VARCHAR(80)"
+          - name: TITLE
+            description: "VARCHAR(80)"
+          - name: STREET
+            description: "VARCHAR(255)"
+          - name: CITY
+            description: "VARCHAR(40)"
+          - name: STATE
+            description: "VARCHAR(80)"
+          - name: POSTALCODE
+            description: "VARCHAR(20)"
+          - name: COUNTRY
+            description: "VARCHAR(80)"
+          - name: STATECODE
+            description: "VARCHAR(10)"
+          - name: COUNTRYCODE
+            description: "VARCHAR(10)"
+          - name: LATITUDE
+            description: "DECIMAL"
+          - name: LONGITUDE
+            description: "DECIMAL"
+          - name: GEOCODEACCURACY
+            description: "VARCHAR(40)"
+          - name: EMAIL
+            description: "VARCHAR(128)"
+          - name: EMAILPREFERENCESAUTOBCC
+            description: "NUMBER(10, 0)"
+          - name: EMAILPREFERENCESAUTOBCCSTAYINTOUCH
+            description: "NUMBER(10, 0)"
+          - name: EMAILPREFERENCESSTAYINTOUCHREMINDER
+            description: "NUMBER(10, 0)"
+          - name: SENDEREMAIL
+            description: "VARCHAR(80)"
+          - name: SENDERNAME
+            description: "VARCHAR(80)"
+          - name: SIGNATURE
+            description: "VARCHAR(1333)"
+          - name: STAYINTOUCHSUBJECT
+            description: "VARCHAR(80)"
+          - name: STAYINTOUCHSIGNATURE
+            description: "VARCHAR(512)"
+          - name: STAYINTOUCHNOTE
+            description: "VARCHAR(512)"
+          - name: PHONE
+            description: "VARCHAR(40)"
+          - name: FAX
+            description: "VARCHAR(40)"
+          - name: MOBILEPHONE
+            description: "VARCHAR(40)"
+          - name: ALIAS
+            description: "VARCHAR(8)"
+          - name: COMMUNITYNICKNAME
+            description: "VARCHAR(40)"
+          - name: BADGETEXT
+            description: "VARCHAR(80)"
+          - name: ISACTIVE
+            description: "NUMBER(10, 0)"
+          - name: TIMEZONESIDKEY
+            description: "VARCHAR(40)"
+          - name: USERROLEID
+            description: "VARCHAR(18)"
+          - name: LOCALESIDKEY
+            description: "VARCHAR(40)"
+          - name: RECEIVESINFOEMAILS
+            description: "NUMBER(10, 0)"
+          - name: RECEIVESADMININFOEMAILS
+            description: "NUMBER(10, 0)"
+          - name: EMAILENCODINGKEY
+            description: "VARCHAR(40)"
+          - name: DEFAULTCURRENCYISOCODE
+            description: "VARCHAR(3)"
+          - name: CURRENCYISOCODE
+            description: "VARCHAR(3)"
+          - name: USERTYPE
+            description: "VARCHAR(40)"
+          - name: LANGUAGELOCALEKEY
+            description: "VARCHAR(40)"
+          - name: EMPLOYEENUMBER
+            description: "VARCHAR(20)"
+          - name: DELEGATEDAPPROVERID
+            description: "VARCHAR(18)"
+          - name: MANAGERID
+            description: "VARCHAR(18)"
+          - name: LASTLOGINDATE
+            description: "TIMESTAMP"
+          - name: CREATEDDATE
+            description: "TIMESTAMP"
+          - name: CREATEDBYID
+            description: "VARCHAR(18)"
+          - name: LASTMODIFIEDDATE
+            description: "TIMESTAMP"
+          - name: LASTMODIFIEDBYID
+            description: "VARCHAR(18)"
+          - name: SYSTEMMODSTAMP
+            description: "TIMESTAMP"
+          - name: OFFLINETRIALEXPIRATIONDATE
+            description: "TIMESTAMP"
+          - name: OFFLINEPDATRIALEXPIRATIONDATE
+            description: "TIMESTAMP"
+          - name: USERPERMISSIONSMARKETINGUSER
+            description: "NUMBER(10, 0)"
+          - name: USERPERMISSIONSOFFLINEUSER
+            description: "NUMBER(10, 0)"
+          - name: USERPERMISSIONSAVANTGOUSER
+            description: "NUMBER(10, 0)"
+          - name: USERPERMISSIONSCALLCENTERAUTOLOGIN
+            description: "NUMBER(10, 0)"
+          - name: USERPERMISSIONSMOBILEUSER
+            description: "NUMBER(10, 0)"
+          - name: USERPERMISSIONSSFCONTENTUSER
+            description: "NUMBER(10, 0)"
+          - name: USERPERMISSIONSKNOWLEDGEUSER
+            description: "NUMBER(10, 0)"
+          - name: USERPERMISSIONSINTERACTIONUSER
+            description: "NUMBER(10, 0)"
+          - name: USERPERMISSIONSSUPPORTUSER
+            description: "NUMBER(10, 0)"
+          - name: FORECASTENABLED
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESACTIVITYREMINDERSPOPUP
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESEVENTREMINDERSCHECKBOXDEFAULT
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESTASKREMINDERSCHECKBOXDEFAULT
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESREMINDERSOUNDOFF
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESDISABLEALLFEEDSEMAIL
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESDISABLEFOLLOWERSEMAIL
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESDISABLEPROFILEPOSTEMAIL
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESDISABLECHANGECOMMENTEMAIL
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESDISABLELATERCOMMENTEMAIL
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESDISPROFPOSTCOMMENTEMAIL
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESCONTENTNOEMAIL
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESCONTENTEMAILASANDWHEN
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESHIDECSNGETCHATTERMOBILETASK
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESDISABLEMENTIONSPOSTEMAIL
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESDISMENTIONSCOMMENTEMAIL
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESHIDECSNDESKTOPTASK
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESHIDECHATTERONBOARDINGSPLASH
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESHIDESECONDCHATTERONBOARDINGSPLASH
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESDISCOMMENTAFTERLIKEEMAIL
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESDISABLELIKEEMAIL
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSORTFEEDBYCOMMENT
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESDISABLEMESSAGEEMAIL
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESDISABLEBOOKMARKEMAIL
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESDISABLESHAREPOSTEMAIL
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESENABLEAUTOSUBFORFEEDS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESDISABLEFILESHARENOTIFICATIONSFORAPI
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWTITLETOEXTERNALUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWMANAGERTOEXTERNALUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWEMAILTOEXTERNALUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWWORKPHONETOEXTERNALUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWMOBILEPHONETOEXTERNALUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWFAXTOEXTERNALUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWSTREETADDRESSTOEXTERNALUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWCITYTOEXTERNALUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWSTATETOEXTERNALUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWPOSTALCODETOEXTERNALUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWCOUNTRYTOEXTERNALUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWPROFILEPICTOGUESTUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWTITLETOGUESTUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWCITYTOGUESTUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWSTATETOGUESTUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWPOSTALCODETOGUESTUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWCOUNTRYTOGUESTUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESHIDES1BROWSERUI
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESDISABLEENDORSEMENTEMAIL
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESPATHASSISTANTCOLLAPSED
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESCACHEDIAGNOSTICS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWEMAILTOGUESTUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWMANAGERTOGUESTUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWWORKPHONETOGUESTUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWMOBILEPHONETOGUESTUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWFAXTOGUESTUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSHOWSTREETADDRESSTOGUESTUSERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESLIGHTNINGEXPERIENCEPREFERRED
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESHIDEENDUSERONBOARDINGASSISTANTMODAL
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESHIDELIGHTNINGMIGRATIONMODAL
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESHIDESFXWELCOMEMAT
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESHIDEBIGGERPHOTOCALLOUT
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESGLOBALNAVBARWTSHOWN
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESGLOBALNAVGRIDMENUWTSHOWN
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESCREATELEXAPPSWTSHOWN
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESFAVORITESWTSHOWN
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESRECORDHOMESECTIONCOLLAPSEWTSHOWN
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESRECORDHOMERESERVEDWTSHOWN
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESFAVORITESSHOWTOPFAVORITES
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESEXCLUDEMAILAPPATTACHMENTS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSUPPRESSTASKSFXREMINDERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESSUPPRESSEVENTSFXREMINDERS
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESPREVIEWCUSTOMTHEME
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESHASCELEBRATIONBADGE
+            description: "NUMBER(10, 0)"
+          - name: USERPREFERENCESUSERDEBUGMODEPREF
+            description: "NUMBER(10, 0)"
+          - name: CONTACTID
+            description: "VARCHAR(18)"
+          - name: ACCOUNTID
+            description: "VARCHAR(18)"
+          - name: CALLCENTERID
+            description: "VARCHAR(18)"
+          - name: EXTENSION
+            description: "VARCHAR(40)"
+          - name: PORTALROLE
+            description: "VARCHAR(40)"
+          - name: ISPORTALENABLED
+            description: "NUMBER(10, 0)"
+          - name: FEDERATIONIDENTIFIER
+            description: "VARCHAR(512)"
+          - name: ABOUTME
+            description: "VARCHAR(1000)"
+          - name: FULLPHOTOURL
+            description: "VARCHAR(1024)"
+          - name: SMALLPHOTOURL
+            description: "VARCHAR(1024)"
+          - name: ISEXTINDICATORVISIBLE
+            description: "NUMBER(10, 0)"
+          - name: OUTOFOFFICEMESSAGE
+            description: "VARCHAR(40)"
+          - name: MEDIUMPHOTOURL
+            description: "VARCHAR(1024)"
+          - name: DIGESTFREQUENCY
+            description: "VARCHAR(40)"
+          - name: DEFAULTGROUPNOTIFICATIONFREQUENCY
+            description: "VARCHAR(40)"
+          - name: LASTVIEWEDDATE
+            description: "TIMESTAMP"
+          - name: LASTREFERENCEDDATE
+            description: "TIMESTAMP"
+          - name: BANNERPHOTOURL
+            description: "VARCHAR(1024)"
+          - name: SMALLBANNERPHOTOURL
+            description: "VARCHAR(1024)"
+          - name: MEDIUMBANNERPHOTOURL
+            description: "VARCHAR(1024)"
+          - name: ISPROFILEPHOTOACTIVE
+            description: "NUMBER(10, 0)"
+          - name: SVMXC__DISPATCH_CONSOLE_SETTINGS__C
+            description: "VARCHAR"
+          - name: SVMXC__FACETIME_ID__C
+            description: "VARCHAR(100)"
+          - name: SVMXC__IS_SUPER_DISPATCHER__C
+            description: "NUMBER(10, 0)"
+          - name: SVMXC__SELECT__C
+            description: "NUMBER(10, 0)"
+          - name: SVMXC__SERVICEMAX_USER__C
+            description: "NUMBER(10, 0)"
+          - name: APTTUS_APPROVAL__APPROVAL_LEVEL__C
+            description: "VARCHAR(255)"
+          - name: APTTUS_APPROVAL__NEXT_LEVEL_APPROVER__C
+            description: "VARCHAR(18)"
+          - name: ECHOSIGN_DEV1__ECHOSIGN_ALLOW_DELEGATED_SENDING__C
+            description: "NUMBER(10, 0)"
+          - name: ECHOSIGN_DEV1__ECHOSIGN_EMAIL_VERIFIED__C
+            description: "NUMBER(10, 0)"
+          - name: PI__CAN_VIEW_NOT_ASSIGNED_PROSPECTS__C
+            description: "NUMBER(10, 0)"
+          - name: PI__PARDOT_API_KEY__C
+            description: "VARCHAR(100)"
+          - name: PI__PARDOT_API_VERSION__C
+            description: "VARCHAR(1)"
+          - name: PI__PARDOT_USER_ID__C
+            description: "VARCHAR(100)"
+          - name: PI__PARDOT_USER_KEY__C
+            description: "VARCHAR(100)"
+          - name: PI__PARDOT_USER_ROLE__C
+            description: "VARCHAR(100)"
+          - name: COST_CENTER__C
+            description: "DECIMAL"
+          - name: EXEMPTFROMVALIDATION__C
+            description: "NUMBER(10, 0)"
+          - name: IS_FIRST_TIME_LOGIN__C
+            description: "NUMBER(10, 0)"
+          - name: NCMO_APPROVER_TIER_1__C
+            description: "VARCHAR(18)"
+          - name: NCMO_APPROVER_TIER_2__C
+            description: "VARCHAR(18)"
+          - name: REGION__C
+            description: "VARCHAR(255)"
+          - name: TECH__C
+            description: "VARCHAR(44)"
+          - name: ET4AE5__DEFAULT_ET_PAGE__C
+            description: "VARCHAR(255)"
+          - name: ET4AE5__DEFAULT_MID__C
+            description: "VARCHAR(20)"
+          - name: ET4AE5__EXACTTARGETFORAPPEXCHANGEADMIN__C
+            description: "NUMBER(10, 0)"
+          - name: ET4AE5__EXACTTARGETFORAPPEXCHANGEUSER__C
+            description: "NUMBER(10, 0)"
+          - name: ET4AE5__EXACTTARGETUSERNAME__C
+            description: "VARCHAR(255)"
+          - name: ET4AE5__EXACTTARGET_OAUTH_TOKEN__C
+            description: "VARCHAR(175)"
+          - name: ET4AE5__VALIDEXACTTARGETADMIN__C
+            description: "NUMBER(10, 0)"
+          - name: ET4AE5__VALIDEXACTTARGETUSER__C
+            description: "NUMBER(10, 0)"
+          - name: DOWNLOAD_FIELD_SERVICE_USERS__C
+            description: "NUMBER(10, 0)"
+          - name: FIVE9__FIVE9AGENTID__C
+            description: "VARCHAR(20)"
+          - name: FIVE9__FIVE9AGENT_LOGIN_TIMESTAMP__C
+            description: "VARCHAR(20)"
+          - name: LEGACY_USER_ID__C
+            description: "VARCHAR(20)"
+          - name: PROFILEID
+            description: "VARCHAR(18)"
+  - name: SAP_ECC
+    database: RAW
+    schema: SAP_ECC
+    tables: 
+      - name: DD07T
+        columns:
+          - name: DOMNAME
+            description: "VARCHAR(30) | Domain name"
+            tests:
+              - not_null
+          - name: DDLANGUAGE
+            description: "VARCHAR(1) | Language Key"
+            tests:
+              - not_null
+          - name: AS4LOCAL
+            description: "VARCHAR(1) | Activation Status of a Repository Object"
+            tests:
+              - not_null
+          - name: VALPOS
+            description: "VARCHAR(4) | Domain value key | DEFAULT '0'"
+            tests:
+              - not_null
+          - name: AS4VERS
+            description: "VARCHAR(4) | Version of the entry (not used) | DEFAULT '0'"
+            tests:
+              - not_null
+          - name: DDTEXT
+            description: "VARCHAR(60) | Short Text for Fixed Values"
+          - name: DOMVAL_LD
+            description: "VARCHAR(10) | Language-specific values for domains, lower limit"
+          - name: DOMVAL_HD
+            description: "VARCHAR(10) | Language-specific values for domains, upper limit"
+          - name: DOMVALUE_L
+            description: "VARCHAR(10) | Values for Domains: Single Value / Upper Limit"
+          - name: META_UPD_DT
+            description: "DECIMAL"
+          - name: CONCAT(DOMNAME, DDLANGUAGE, AS4LOCAL, VALPOS, AS4VERS)
+            description: "Primary Key"
+            tests:
+              - not_null
+              - unique
+      - name: KNA1
+        columns:
+          - name: MANDT
+            description: "VARCHAR(3) | Client | DEFAULT '0'"
+            tests:
+              - not_null
+          - name: KUNNR
+            description: "VARCHAR(10) | Customer Number"
+            tests:
+              - not_null
+          - name: LAND1
+            description: "VARCHAR(3) | Country Key"
+          - name: NAME1
+            description: "VARCHAR(35) | Name 1"
+          - name: NAME2
+            description: "VARCHAR(35) | Name 2"
+          - name: ORT01
+            description: "VARCHAR(35) | City"
+          - name: PSTLZ
+            description: "VARCHAR(10) | Postal Code"
+          - name: REGIO
+            description: "VARCHAR(3) | Region (State, Province, County)"
+          - name: SORTL
+            description: "VARCHAR(10) | Sort field"
+          - name: STRAS
+            description: "VARCHAR(35) | Street and House Number"
+          - name: TELF1
+            description: "VARCHAR(16) | First telephone number"
+          - name: TELFX
+            description: "VARCHAR(31) | Fax Number"
+          - name: XCPDK
+            description: "VARCHAR(1) | Indicator: Is the account a one-time account?"
+          - name: ADRNR
+            description: "VARCHAR(10) | Address"
+          - name: MCOD1
+            description: "VARCHAR(25) | Search term for matchcode search"
+          - name: MCOD2
+            description: "VARCHAR(25) | Search Term for Matchcode Search"
+          - name: MCOD3
+            description: "VARCHAR(25) | Search term for matchcode search"
+          - name: ANRED
+            description: "VARCHAR(15) | Title"
+          - name: AUFSD
+            description: "VARCHAR(2) | Central order block for customer"
+          - name: BAHNE
+            description: "VARCHAR(25) | Express train station"
+          - name: BAHNS
+            description: "VARCHAR(25) | Train station"
+          - name: BBBNR
+            description: "VARCHAR(7) | International location number (part 1)"
+          - name: BBSNR
+            description: "VARCHAR(5) | International location number (Part 2)"
+          - name: BEGRU
+            description: "VARCHAR(4) | Authorization Group"
+          - name: BRSCH
+            description: "VARCHAR(4) | Industry key"
+          - name: BUBKZ
+            description: "VARCHAR(1) | Check digit for the international location number"
+          - name: DATLT
+            description: "VARCHAR(14) | Data communication line no."
+          - name: ERDAT
+            description: "VARCHAR(8) | Date on which the Record Was Created"
+          - name: ERNAM
+            description: "VARCHAR(12) | Name of Person who Created the Object"
+          - name: EXABL
+            description: "VARCHAR(1) | Indicator: Unloading points exist"
+          - name: FAKSD
+            description: "VARCHAR(2) | Central billing block for customer"
+          - name: FISKN
+            description: "VARCHAR(10) | Account number of the master record with the fiscal address"
+          - name: KNAZK
+            description: "VARCHAR(2) | Working Time Calendar"
+          - name: KNRZA
+            description: "VARCHAR(10) | Account number of an alternative payer"
+          - name: KONZS
+            description: "VARCHAR(10) | Group key"
+          - name: KTOKD
+            description: "VARCHAR(4) | Customer Account Group"
+          - name: KUKLA
+            description: "VARCHAR(2) | Customer Classification"
+          - name: LIFNR
+            description: "VARCHAR(10) | Account Number of Vendor or Creditor"
+          - name: LIFSD
+            description: "VARCHAR(2) | Central delivery block for the customer"
+          - name: LOCCO
+            description: "VARCHAR(10) | City Coordinates"
+          - name: LOEVM
+            description: "VARCHAR(1) | Central Deletion Flag for Master Record"
+          - name: NAME3
+            description: "VARCHAR(35) | Name 3"
+          - name: NAME4
+            description: "VARCHAR(35) | Name 4"
+          - name: NIELS
+            description: "VARCHAR(2) | Nielsen ID"
+          - name: ORT02
+            description: "VARCHAR(35) | District"
+          - name: PFACH
+            description: "VARCHAR(10) | PO Box"
+          - name: PSTL2
+            description: "VARCHAR(10) | P.O. Box Postal Code"
+          - name: COUNC
+            description: "VARCHAR(3) | County Code"
+          - name: CITYC
+            description: "VARCHAR(4) | City Code"
+          - name: RPMKR
+            description: "VARCHAR(5) | Regional market"
+          - name: SPERR
+            description: "VARCHAR(1) | Central posting block"
+          - name: SPRAS
+            description: "VARCHAR(1) | Language Key"
+          - name: STCD1
+            description: "VARCHAR(16) | Tax Number 1"
+          - name: STCD2
+            description: "VARCHAR(11) | Tax Number 2"
+          - name: STKZA
+            description: "VARCHAR(1) | Indicator: Business Partner Subject to Equalization Tax?"
+          - name: STKZU
+            description: "VARCHAR(1) | Liable for VAT"
+          - name: TELBX
+            description: "VARCHAR(15) | Telebox number"
+          - name: TELF2
+            description: "VARCHAR(16) | Second telephone number"
+          - name: TELTX
+            description: "VARCHAR(30) | Teletex number"
+          - name: TELX1
+            description: "VARCHAR(30) | Telex number"
+          - name: LZONE
+            description: "VARCHAR(10) | Transportation zone to or from which the goods are delivered"
+          - name: XZEMP
+            description: "VARCHAR(1) | Indicator: Is an alternative payer allowed in document?"
+          - name: VBUND
+            description: "VARCHAR(6) | Company ID of trading partner"
+          - name: STCEG
+            description: "VARCHAR(20) | VAT Registration Number"
+          - name: DEAR1
+            description: "VARCHAR(1) | Indicator: Competitor"
+          - name: DEAR2
+            description: "VARCHAR(1) | Indicator: Sales partner"
+          - name: DEAR3
+            description: "VARCHAR(1) | Indicator: Sales prospect"
+          - name: DEAR4
+            description: "VARCHAR(1) | Indicator for customer type 4"
+          - name: DEAR5
+            description: "VARCHAR(1) | ID for default sold-to party"
+          - name: GFORM
+            description: "VARCHAR(2) | Legal status"
+          - name: BRAN1
+            description: "VARCHAR(10) | Industry code 1"
+          - name: BRAN2
+            description: "VARCHAR(10) | Industry code 2"
+          - name: BRAN3
+            description: "VARCHAR(10) | Industry code 3"
+          - name: BRAN4
+            description: "VARCHAR(10) | Industry code 4"
+          - name: BRAN5
+            description: "VARCHAR(10) | Industry code 5"
+          - name: EKONT
+            description: "VARCHAR(10) | Initial contact"
+          - name: UMSAT
+            description: "DECIMAL | Annual sales"
+          - name: UMJAH
+            description: "VARCHAR(4) | Year For Which Sales are Given"
+          - name: UWAER
+            description: "VARCHAR(5) | Currency of sales figure"
+          - name: JMZAH
+            description: "VARCHAR(6) | Yearly number of employees"
+          - name: JMJAH
+            description: "VARCHAR(4) | Year for which the number of employees is given"
+          - name: KATR1
+            description: "VARCHAR(2) | Attribute 1"
+          - name: KATR2
+            description: "VARCHAR(2) | Attribute 2"
+          - name: KATR3
+            description: "VARCHAR(2) | Attribute 3"
+          - name: KATR4
+            description: "VARCHAR(2) | Attribute 4"
+          - name: KATR5
+            description: "VARCHAR(2) | Attribute 5"
+          - name: KATR6
+            description: "VARCHAR(3) | Attribute 6"
+          - name: KATR7
+            description: "VARCHAR(3) | Attribute 7"
+          - name: KATR8
+            description: "VARCHAR(3) | Attribute 8"
+          - name: KATR9
+            description: "VARCHAR(3) | Attribute 9"
+          - name: KATR10
+            description: "VARCHAR(3) | Attribute 10"
+          - name: STKZN
+            description: "VARCHAR(1) | Natural Person"
+          - name: UMSA1
+            description: "DECIMAL | Annual sales"
+          - name: TXJCD
+            description: "VARCHAR(15) | Tax Jurisdiction"
+          - name: PERIV
+            description: "VARCHAR(2) | Fiscal Year Variant"
+          - name: ABRVW
+            description: "VARCHAR(3) | Usage Indicator"
+          - name: INSPBYDEBI
+            description: "VARCHAR(1) | Inspection Carried Out By Customer (No Inspection Lot)"
+          - name: INSPATDEBI
+            description: "VARCHAR(1) | Inspection for a Delivery Note After Outbound Delivery"
+          - name: KTOCD
+            description: "VARCHAR(4) | Reference Account Group for One-Time Account (Customer)"
+          - name: PFORT
+            description: "VARCHAR(35) | PO Box city"
+          - name: WERKS
+            description: "VARCHAR(4) | Plant"
+          - name: DTAMS
+            description: "VARCHAR(1) | Report key for data medium exchange"
+          - name: DTAWS
+            description: "VARCHAR(2) | Instruction key for data medium exchange"
+          - name: DUEFL
+            description: "VARCHAR(1) | Status of Data Transfer into Subsequent Release"
+          - name: HZUOR
+            description: "VARCHAR(2) | Assignment to Hierarchy"
+          - name: SPERZ
+            description: "VARCHAR(1) | Payment Block"
+          - name: ETIKG
+            description: "VARCHAR(10) | IS-R Labeling: customer/plant group"
+          - name: CIVVE
+            description: "VARCHAR(1) | ID for mainly non-military use"
+          - name: MILVE
+            description: "VARCHAR(1) | ID for mainly military use"
+          - name: KDKG1
+            description: "VARCHAR(2) | Customer condition group 1"
+          - name: KDKG2
+            description: "VARCHAR(2) | Customer condition group 2"
+          - name: KDKG3
+            description: "VARCHAR(2) | Customer condition group 3"
+          - name: KDKG4
+            description: "VARCHAR(2) | Customer condition group 4"
+          - name: KDKG5
+            description: "VARCHAR(2) | Customer condition group 5"
+          - name: XKNZA
+            description: "VARCHAR(1) | Indicator: Alternative payer using account number"
+          - name: FITYP
+            description: "VARCHAR(2) | Tax type"
+          - name: STCDT
+            description: "VARCHAR(2) | Tax Number Type"
+          - name: STCD3
+            description: "VARCHAR(18) | Tax Number 3"
+          - name: STCD4
+            description: "VARCHAR(18) | Tax Number 4"
+          - name: STCD5
+            description: "VARCHAR(60) | Tax Number 5"
+          - name: XICMS
+            description: "VARCHAR(1) | Customer is ICMS-exempt"
+          - name: XXIPI
+            description: "VARCHAR(1) | Customer is IPI-exempt"
+          - name: XSUBT
+            description: "VARCHAR(3) | Customer group for Substituiçao Tributária calculation"
+          - name: CFOPC
+            description: "VARCHAR(2) | Customer's CFOP category"
+          - name: TXLW1
+            description: "VARCHAR(3) | Tax law: ICMS"
+          - name: TXLW2
+            description: "VARCHAR(3) | Tax law: IPI"
+          - name: CCC01
+            description: "VARCHAR(1) | Indicator for biochemical warfare for legal control"
+          - name: CCC02
+            description: "VARCHAR(1) | Indicator for nuclear nonproliferation for legal control"
+          - name: CCC03
+            description: "VARCHAR(1) | Indicator for national security for legal control"
+          - name: CCC04
+            description: "VARCHAR(1) | Indicator for missile technology for legal control"
+          - name: CASSD
+            description: "VARCHAR(2) | Central sales block for customer"
+          - name: KNURL
+            description: "VARCHAR(132) | Uniform resource locator"
+          - name: J_1KFREPRE
+            description: "VARCHAR(10) | Name of Representative"
+          - name: J_1KFTBUS
+            description: "VARCHAR(30) | Type of Business"
+          - name: J_1KFTIND
+            description: "VARCHAR(30) | Type of Industry"
+          - name: CONFS
+            description: "VARCHAR(1) | Status of Change Authorization (Central)"
+          - name: UPDAT
+            description: "VARCHAR(8) | Date on Which the Changes Were Confirmed"
+          - name: UPTIM
+            description: "VARCHAR(6) | Time of Last Change Confirmation"
+          - name: NODEL
+            description: "VARCHAR(1) | Central deletion block for master record"
+          - name: DEAR6
+            description: "VARCHAR(1) | Indicator: Consumer"
+          - name: CVP_XBLCK
+            description: "VARCHAR(1) | Business Purpose Completed Flag"
+          - name: SUFRAMA
+            description: "VARCHAR(9) | Suframa Code"
+          - name: RG
+            description: "VARCHAR(11) | RG Number"
+          - name: EXP
+            description: "VARCHAR(3) | Issued by"
+          - name: UF
+            description: "VARCHAR(2) | State"
+          - name: RGDATE
+            description: "VARCHAR(8) | RG Issuing Date"
+          - name: RIC
+            description: "VARCHAR(11) | RIC Number"
+          - name: RNE
+            description: "VARCHAR(10) | Foreign National Registration"
+          - name: RNEDATE
+            description: "VARCHAR(8) | RNE Issuing Date"
+          - name: CNAE
+            description: "VARCHAR(7) | CNAE"
+          - name: LEGALNAT
+            description: "VARCHAR(4) | Legal Nature"
+          - name: CRTN
+            description: "VARCHAR(1) | CRT Number"
+          - name: ICMSTAXPAY
+            description: "VARCHAR(2) | ICMS Taxpayer"
+          - name: INDTYP
+            description: "VARCHAR(2) | Industry Main Type"
+          - name: TDT
+            description: "VARCHAR(2) | Tax Declaration Type"
+          - name: COMSIZE
+            description: "VARCHAR(2) | Company Size"
+          - name: DECREGPC
+            description: "VARCHAR(2) | Declaration Regimen for PIS/COFINS"
+          - name: _VSO_R_PALHGT
+            description: "DECIMAL | Maximum Stacking Height of the Packaging Material (VSO) | Column renamed from /VSO/R_PALHGT to _VSO_R_PALHGT "
+          - name: _VSO_R_PAL_UL
+            description: "VARCHAR(3) | Unit of Length for Packaging Material (VSO) | Column renamed from /VSO/R_PAL_UL to _VSO_R_PAL_UL "
+          - name: _VSO_R_PK_MAT
+            description: "VARCHAR(1) | Customer-Related Packing for Each Packaging Material (VSO) | Column renamed from /VSO/R_PK_MAT to _VSO_R_PK_MAT "
+          - name: _VSO_R_MATPAL
+            description: "VARCHAR(18) | Packaging Material of the Customer in VSO | Column renamed from /VSO/R_MATPAL to _VSO_R_MATPAL "
+          - name: _VSO_R_I_NO_LYR
+            description: "VARCHAR(2) | Number Layers Under an Inter-Pallet (VSO) | Column renamed from /VSO/R_I_NO_LYR to _VSO_R_I_NO_LYR "
+          - name: _VSO_R_ONE_MAT
+            description: "VARCHAR(1) | Packing Material-Specific for Each Packaging Material | Column renamed from /VSO/R_ONE_MAT to _VSO_R_ONE_MAT "
+          - name: _VSO_R_ONE_SORT
+            description: "VARCHAR(1) | Pack Only One Package Type for Each PKM (VSO) | Column renamed from /VSO/R_ONE_SORT to _VSO_R_ONE_SORT "
+          - name: _VSO_R_ULD_SIDE
+            description: "VARCHAR(1) | Side Preference of Loading/Unloading (VSO) | Column renamed from /VSO/R_ULD_SIDE to _VSO_R_ULD_SIDE "
+          - name: _VSO_R_LOAD_PREF
+            description: "VARCHAR(1) | Front/Back Preference of Loading/Unloading (VSO) | Column renamed from /VSO/R_LOAD_PREF to _VSO_R_LOAD_PREF "
+          - name: _VSO_R_DPOINT
+            description: "VARCHAR(10) | Collective Unloading Point for VSO | Column renamed from /VSO/R_DPOINT to _VSO_R_DPOINT "
+          - name: ALC
+            description: "VARCHAR(8) | Agency Location Code"
+          - name: PMT_OFFICE
+            description: "VARCHAR(5) | Payment Office"
+          - name: FEE_SCHEDULE
+            description: "VARCHAR(4) | Fee schedule"
+          - name: DUNS
+            description: "VARCHAR(9) | DUNS Number"
+          - name: DUNS4
+            description: "VARCHAR(4) | DUNS+4"
+          - name: PSOFG
+            description: "VARCHAR(10) | Processor group"
+          - name: PSOIS
+            description: "VARCHAR(20) | Subledger acct preprocessing procedure"
+          - name: PSON1
+            description: "VARCHAR(35) | Name 1"
+          - name: PSON2
+            description: "VARCHAR(35) | Name 2"
+          - name: PSON3
+            description: "VARCHAR(35) | Name 3"
+          - name: PSOVN
+            description: "VARCHAR(35) | First Name"
+          - name: PSOTL
+            description: "VARCHAR(20) | Title"
+          - name: PSOHS
+            description: "VARCHAR(6) | House number: is no longer used from Release 4.6B"
+          - name: PSOST
+            description: "VARCHAR(28) | Street: No longer used from Release 4.6B"
+          - name: PSOO1
+            description: "VARCHAR(50) | Description"
+          - name: PSOO2
+            description: "VARCHAR(50) | Description"
+          - name: PSOO3
+            description: "VARCHAR(50) | Description"
+          - name: PSOO4
+            description: "VARCHAR(50) | Description"
+          - name: PSOO5
+            description: "VARCHAR(50) | Description"
+          - name: ZZXGN
+            description: "VARCHAR(3) | Group Identifier"
+          - name: ZZBIS_REG
+            description: "VARCHAR(5) | Business Region"
+          - name: META_UPD_DT
+            description: "DECIMAL"
+          - name: CONCAT(MANDT, KUNNR)
+            description: "Primary Key"
+            tests:
+              - not_null
+              - unique
+      - name: KNVP
+        columns:
+          - name: MANDT
+            description: "VARCHAR(3) | Client | DEFAULT '0'"
+            tests:
+              - not_null
+          - name: KUNNR
+            description: "VARCHAR(10) | Customer Number"
+            tests:
+              - not_null
+          - name: VKORG
+            description: "VARCHAR(4) | Sales Organization"
+            tests:
+              - not_null
+          - name: VTWEG
+            description: "VARCHAR(2) | Distribution Channel"
+            tests:
+              - not_null
+          - name: SPART
+            description: "VARCHAR(2) | Division"
+            tests:
+              - not_null
+          - name: PARVW
+            description: "VARCHAR(2) | Partner Function"
+            tests:
+              - not_null
+          - name: PARZA
+            description: "VARCHAR(3) | Partner counter | DEFAULT '0'"
+            tests:
+              - not_null
+          - name: KUNN2
+            description: "VARCHAR(10) | Customer number of business partner"
+          - name: LIFNR
+            description: "VARCHAR(10) | Account Number of Vendor or Creditor"
+          - name: PERNR
+            description: "VARCHAR(8) | Personnel Number"
+          - name: PARNR
+            description: "VARCHAR(10) | Number of contact person"
+          - name: KNREF
+            description: "VARCHAR(30) | Customer description of partner (plant, storage location)"
+          - name: DEFPA
+            description: "VARCHAR(1) | Default Partner"
+          - name: META_UPD_DT
+            description: "DECIMAL"
+          - name: CONCAT(MANDT, KUNNR, VKORG, VTWEG, SPART, PARVW, PARZA)
+            description: "Primary Key"
+            tests:
+              - not_null
+              - unique
+      - name: KNVV
+        columns:
+          - name: MANDT
+            description: "VARCHAR(3) | Client | DEFAULT '0'"
+            tests:
+              - not_null
+          - name: KUNNR
+            description: "VARCHAR(10) | Customer Number"
+            tests:
+              - not_null
+          - name: VKORG
+            description: "VARCHAR(4) | Sales Organization"
+            tests:
+              - not_null
+          - name: VTWEG
+            description: "VARCHAR(2) | Distribution Channel"
+            tests:
+              - not_null
+          - name: SPART
+            description: "VARCHAR(2) | Division"
+            tests:
+              - not_null
+          - name: ERNAM
+            description: "VARCHAR(12) | Name of Person Who Created the Object"
+          - name: ERDAT
+            description: "VARCHAR(8) | Date on Which Record Was Created"
+          - name: BEGRU
+            description: "VARCHAR(4) | Authorization Group"
+          - name: LOEVM
+            description: "VARCHAR(1) | Deletion flag for customer (sales level)"
+          - name: VERSG
+            description: "VARCHAR(1) | Customer Statistics Group"
+          - name: AUFSD
+            description: "VARCHAR(2) | Customer order block (sales area)"
+          - name: KALKS
+            description: "VARCHAR(1) | Pricing procedure assigned to this customer"
+          - name: KDGRP
+            description: "VARCHAR(2) | Customer group"
+          - name: BZIRK
+            description: "VARCHAR(6) | Sales district"
+          - name: KONDA
+            description: "VARCHAR(2) | Price group (customer)"
+          - name: PLTYP
+            description: "VARCHAR(2) | Price list type"
+          - name: AWAHR
+            description: "VARCHAR(3) | Order probability of the item"
+          - name: INCO1
+            description: "VARCHAR(3) | Incoterms (Part 1)"
+          - name: INCO2
+            description: "VARCHAR(28) | Incoterms (Part 2)"
+          - name: LIFSD
+            description: "VARCHAR(2) | Customer delivery block (sales area)"
+          - name: AUTLF
+            description: "VARCHAR(1) | Complete delivery defined for each sales order?"
+          - name: ANTLF
+            description: "DECIMAL | Maximum Number of Partial Deliveries Allowed Per Item"
+          - name: KZTLF
+            description: "VARCHAR(1) | Partial Delivery at Item Level"
+          - name: KZAZU
+            description: "VARCHAR(1) | Order Combination Indicator"
+          - name: CHSPL
+            description: "VARCHAR(1) | Batch split allowed"
+          - name: LPRIO
+            description: "VARCHAR(2) | Delivery Priority"
+          - name: EIKTO
+            description: "VARCHAR(12) | Shipper's (Our) Account Number at the Customer or Vendor"
+          - name: VSBED
+            description: "VARCHAR(2) | Shipping Conditions"
+          - name: FAKSD
+            description: "VARCHAR(2) | Billing block for customer (sales and distribution)"
+          - name: MRNKZ
+            description: "VARCHAR(1) | Manual invoice maintenance"
+          - name: PERFK
+            description: "VARCHAR(2) | Invoice dates (calendar identification)"
+          - name: PERRL
+            description: "VARCHAR(2) | Invoice list schedule (calendar identification)"
+          - name: KVAKZ
+            description: "VARCHAR(1) | Cost estimate indicator (inactive)"
+          - name: KVAWT
+            description: "DECIMAL | Value limit for cost estimate (inactive)"
+          - name: WAERS
+            description: "VARCHAR(5) | Currency"
+          - name: KLABC
+            description: "VARCHAR(2) | Customer classification (ABC analysis)"
+          - name: KTGRD
+            description: "VARCHAR(2) | Account Assignment Group for Customer"
+          - name: ZTERM
+            description: "VARCHAR(4) | Terms of Payment Key"
+          - name: VWERK
+            description: "VARCHAR(4) | Delivering Plant (Own or External)"
+          - name: VKGRP
+            description: "VARCHAR(3) | Sales Group"
+          - name: VKBUR
+            description: "VARCHAR(4) | Sales Office"
+          - name: VSORT
+            description: "VARCHAR(10) | Item proposal"
+          - name: KVGR1
+            description: "VARCHAR(3) | Customer group 1"
+          - name: KVGR2
+            description: "VARCHAR(3) | Customer group 2"
+          - name: KVGR3
+            description: "VARCHAR(3) | Customer group 3"
+          - name: KVGR4
+            description: "VARCHAR(3) | Customer group 4"
+          - name: KVGR5
+            description: "VARCHAR(3) | Customer group 5"
+          - name: BOKRE
+            description: "VARCHAR(1) | Indicator: Customer Is Rebate-Relevant"
+          - name: BOIDT
+            description: "VARCHAR(8) | Start of validity per.for the rebate index for the customer"
+          - name: KURST
+            description: "VARCHAR(4) | Exchange Rate Type"
+          - name: PRFRE
+            description: "VARCHAR(1) | Relevant for price determination ID"
+          - name: PRAT1
+            description: "VARCHAR(1) | ID for product attribute 1"
+          - name: PRAT2
+            description: "VARCHAR(1) | ID for product attribute 2"
+          - name: PRAT3
+            description: "VARCHAR(1) | ID for product attribute 3"
+          - name: PRAT4
+            description: "VARCHAR(1) | ID for product attribute 4"
+          - name: PRAT5
+            description: "VARCHAR(1) | ID for product attribute 5"
+          - name: PRAT6
+            description: "VARCHAR(1) | ID for product attribute 6"
+          - name: PRAT7
+            description: "VARCHAR(1) | ID for product attribute 7"
+          - name: PRAT8
+            description: "VARCHAR(1) | ID for product attribute 8"
+          - name: PRAT9
+            description: "VARCHAR(1) | ID for product attribute 9"
+          - name: PRATA
+            description: "VARCHAR(1) | ID for product attribute 10"
+          - name: KABSS
+            description: "VARCHAR(4) | Customer payment guarantee procedure"
+          - name: KKBER
+            description: "VARCHAR(4) | Credit control area"
+          - name: CASSD
+            description: "VARCHAR(2) | Sales block for customer (sales area)"
+          - name: RDOFF
+            description: "VARCHAR(1) | Switch off rounding?"
+          - name: AGREL
+            description: "VARCHAR(1) | Indicator: Relevant for agency business"
+          - name: MEGRU
+            description: "VARCHAR(4) | Unit of Measure Group"
+          - name: UEBTO
+            description: "DECIMAL | Overdelivery Tolerance Limit"
+          - name: UNTTO
+            description: "DECIMAL | Underdelivery Tolerance Limit"
+          - name: UEBTK
+            description: "VARCHAR(1) | Unlimited overdelivery allowed"
+          - name: PVKSM
+            description: "VARCHAR(2) | Customer procedure for product proposal"
+          - name: PODKZ
+            description: "VARCHAR(1) | Relevant for POD processing"
+          - name: PODTG
+            description: "DECIMAL | Timeframe for Confirmation of POD"
+          - name: BLIND
+            description: "VARCHAR(1) | Index Structure Active for Subsequent Settlement (in AB)"
+          - name: CARRIER_NOTIF
+            description: "VARCHAR(1) | Carrier is to be notified"
+          - name: CVP_XBLCK_V
+            description: "VARCHAR(1) | Business Purpose Completed Flag"
+          - name: INCOV
+            description: "VARCHAR(4) | Incoterms Version"
+          - name: INCO2_L
+            description: "VARCHAR(70) | Incoterms Location 1"
+          - name: INCO3_L
+            description: "VARCHAR(70) | Incoterms Location 2"
+          - name: _BEV1_EMLGPFAND
+            description: "VARCHAR(1) | Deposit on Empties | Column renamed from /BEV1/EMLGPFAND to _BEV1_EMLGPFAND "
+          - name: _BEV1_EMLGFORTS
+            description: "VARCHAR(1) | Indicator for Empties Update | Column renamed from /BEV1/EMLGFORTS to _BEV1_EMLGFORTS "
+          - name: FSH_KVGR6
+            description: "VARCHAR(3) | Customer Group 6"
+          - name: FSH_KVGR7
+            description: "VARCHAR(3) | Customer Group 7"
+          - name: FSH_KVGR8
+            description: "VARCHAR(3) | Customer Group 8"
+          - name: FSH_KVGR9
+            description: "VARCHAR(3) | Customer Group 9"
+          - name: FSH_KVGR10
+            description: "VARCHAR(3) | Customer Group 10"
+          - name: FSH_GRREG
+            description: "VARCHAR(4) | Grouping Rule"
+          - name: FSH_RESGY
+            description: "VARCHAR(4) | Release Strategy"
+          - name: FSH_SC_CID
+            description: "VARCHAR(2) | Customer/Vendor ID"
+          - name: FSH_VAS_DETC
+            description: "VARCHAR(1) | VAS Determination Mode"
+          - name: FSH_VAS_CG
+            description: "VARCHAR(3) | Value-Added Services Customer Group"
+          - name: FSH_GRSGY
+            description: "VARCHAR(4) | ARUN Grouping Strategy"
+          - name: FSH_SS
+            description: "VARCHAR(3) | Order Scheduling Strategy"
+          - name: FSH_MSOCDC
+            description: "VARCHAR(10) | Distribution Center of Customer"
+          - name: FSH_MSOPID
+            description: "VARCHAR(20) | Identification of the Customer in the Partner System"
+          - name: ZZPAR_ID
+            description: "VARCHAR(10) | Customer Number"
+          - name: ZZGGN
+            description: "VARCHAR(10) | Global Grouping Number"
+          - name: ZZNGN
+            description: "VARCHAR(10) | National Grouping Number"
+          - name: ZZSGN
+            description: "VARCHAR(10) | Sales Grouping Number"
+          - name: ZZCPL
+            description: "VARCHAR(25) | Channel Partner License"
+          - name: ZZCPL_EXP_DATE
+            description: "VARCHAR(8) | Channel Partner License Exp Date"
+          - name: ZZCIL
+            description: "VARCHAR(25) | Clinical Institution License"
+          - name: ZZCIL_EXP_DATE
+            description: "VARCHAR(8) | Clinical Institution License Exp Date"
+          - name: ZZKVGR6
+            description: "VARCHAR(3) | Hospital Department"
+          - name: ZZKVGR7
+            description: "VARCHAR(3) | CDC Level"
+          - name: ZZCONS_TIER
+            description: "VARCHAR(3) | Consumable Tier"
+          - name: ZZINST_TIER
+            description: "VARCHAR(3) | Instrument Tier"
+          - name: ZZSERV_TIER
+            description: "VARCHAR(3) | Service Tier"
+          - name: META_UPD_DT
+            description: "DECIMAL"
+          - name: CONCAT(MANDT, KUNNR, VKORG, VTWEG, SPART)
+            description: "Primary Key"
+            tests:
+              - not_null
+              - unique
+      - name: T005F
+        columns:
+          - name: MANDT
+            description: "VARCHAR(3) | Client | DEFAULT '0'"
+            tests:
+              - not_null
+          - name: SPRAS
+            description: "VARCHAR(1) | Language Key"
+            tests:
+              - not_null
+          - name: LAND1
+            description: "VARCHAR(3) | Country Key"
+            tests:
+              - not_null
+          - name: REGIO
+            description: "VARCHAR(3) | Region (State, Province, County)"
+            tests:
+              - not_null
+          - name: COUNC
+            description: "VARCHAR(3) | County Code"
+            tests:
+              - not_null
+          - name: BEZEI
+            description: "VARCHAR(20) | Description"
+          - name: META_UPD_DT
+            description: "DECIMAL"
+          - name: CONCAT(MANDT, SPRAS, LAND1, REGIO, COUNC)
+            description: "Primary Key"
+            tests:
+              - not_null
+              - unique
+      - name: T005H
+        columns:
+          - name: MANDT
+            description: "VARCHAR(3) | Client | DEFAULT '0'"
+            tests:
+              - not_null
+          - name: SPRAS
+            description: "VARCHAR(1) | Language Key"
+            tests:
+              - not_null
+          - name: LAND1
+            description: "VARCHAR(3) | Country Key"
+            tests:
+              - not_null
+          - name: REGIO
+            description: "VARCHAR(3) | Region (State, Province, County)"
+            tests:
+              - not_null
+          - name: CITYC
+            description: "VARCHAR(4) | City Code"
+            tests:
+              - not_null
+          - name: BEZEI
+            description: "VARCHAR(20) | Description"
+          - name: META_UPD_DT
+            description: "DECIMAL"
+          - name: CONCAT(MANDT, SPRAS, LAND1, REGIO, CITYC)
+            description: "Primary Key"
+            tests:
+              - not_null
+              - unique
+      - name: T005T
+        columns:
+          - name: MANDT
+            description: "VARCHAR(3) | Client | DEFAULT '0'"
+            tests:
+              - not_null
+          - name: SPRAS
+            description: "VARCHAR(1) | Language Key"
+            tests:
+              - not_null
+          - name: LAND1
+            description: "VARCHAR(3) | Country Key"
+            tests:
+              - not_null
+          - name: LANDX
+            description: "VARCHAR(15) | Country Name"
+          - name: NATIO
+            description: "VARCHAR(15) | Nationality"
+          - name: LANDX50
+            description: "VARCHAR(50) | Country Name (Max. 50 Characters)"
+          - name: NATIO50
+            description: "VARCHAR(50) | Nationality (Max. 50 Characters)"
+          - name: PRQ_SPREGT
+            description: "VARCHAR(30) | Super region per country text"
+          - name: META_UPD_DT
+            description: "DECIMAL"
+          - name: CONCAT(MANDT, SPRAS, LAND1)
+            description: "Primary Key"
+            tests:
+              - not_null
+              - unique
+      - name: T005U
+        columns:
+          - name: MANDT
+            description: "VARCHAR(3) | Client | DEFAULT '0'"
+            tests:
+              - not_null
+          - name: SPRAS
+            description: "VARCHAR(1) | Language Key"
+            tests:
+              - not_null
+          - name: LAND1
+            description: "VARCHAR(3) | Country Key"
+            tests:
+              - not_null
+          - name: BLAND
+            description: "VARCHAR(3) | Region (State, Province, County)"
+            tests:
+              - not_null
+          - name: BEZEI
+            description: "VARCHAR(20) | Description"
+          - name: META_UPD_DT
+            description: "DECIMAL"
+          - name: CONCAT(MANDT, SPRAS, LAND1, BLAND)
+            description: "Primary Key"
+            tests:
+              - not_null
+              - unique
+      - name: T077X
+        columns:
+          - name: MANDT
+            description: "VARCHAR(3) | Client | DEFAULT '0'"
+            tests:
+              - not_null
+          - name: SPRAS
+            description: "VARCHAR(1) | Language Key"
+            tests:
+              - not_null
+          - name: KTOKD
+            description: "VARCHAR(4) | Customer Account Group"
+            tests:
+              - not_null
+          - name: TXT30
+            description: "VARCHAR(30) | Account Group Name"
+          - name: META_UPD_DT
+            description: "DECIMAL"
+          - name: CONCAT(MANDT, SPRAS, KTOKD)
+            description: "Primary Key"
+            tests:
+              - not_null
+              - unique
+      - name: TBRCT
+        columns:
+          - name: MANDT
+            description: "VARCHAR(3) | Client | DEFAULT '0'"
+            tests:
+              - not_null
+          - name: SPRAS
+            description: "VARCHAR(1) | Language Key"
+            tests:
+              - not_null
+          - name: BRACO
+            description: "VARCHAR(10) | Industry code"
+            tests:
+              - not_null
+          - name: VTEXT
+            description: "VARCHAR(20) | Description"
+          - name: META_UPD_DT
+            description: "DECIMAL"
+          - name: CONCAT(MANDT, SPRAS, BRACO)
+            description: "Primary Key"
+            tests:
+              - not_null
+              - unique
+      - name: TKUKT
+        columns:
+          - name: MANDT
+            description: "VARCHAR(3) | Client | DEFAULT '0'"
+            tests:
+              - not_null
+          - name: SPRAS
+            description: "VARCHAR(1) | Language Key"
+            tests:
+              - not_null
+          - name: KUKLA
+            description: "VARCHAR(2) | Customer Classification"
+            tests:
+              - not_null
+          - name: VTEXT
+            description: "VARCHAR(20) | Description"
+          - name: META_UPD_DT
+            description: "DECIMAL"
+          - name: CONCAT(MANDT, SPRAS, KUKLA)
+            description: "Primary Key"
+            tests:
+              - not_null
+              - unique
+      - name: TVFST
+        columns:
+          - name: MANDT
+            description: "VARCHAR(3) | Client | DEFAULT '0'"
+            tests:
+              - not_null
+          - name: SPRAS
+            description: "VARCHAR(1) | Language Key"
+            tests:
+              - not_null
+          - name: FAKSP
+            description: "VARCHAR(2) | Block"
+            tests:
+              - not_null
+          - name: VTEXT
+            description: "VARCHAR(20) | Description"
+          - name: META_UPD_DT
+            description: "DECIMAL"
+          - name: CONCAT(MANDT, SPRAS, FAKSP)
+            description: "Primary Key"
+            tests:
+              - not_null
+              - unique
+      - name: TVLST
+        columns:
+          - name: MANDT
+            description: "VARCHAR(3) | Client | DEFAULT '0'"
+            tests:
+              - not_null
+          - name: SPRAS
+            description: "VARCHAR(1) | Language Key"
+            tests:
+              - not_null
+          - name: LIFSP
+            description: "VARCHAR(2) | Default delivery block"
+            tests:
+              - not_null
+          - name: VTEXT
+            description: "VARCHAR(20) | Description"
+          - name: META_UPD_DT
+            description: "DECIMAL"
+          - name: CONCAT(MANDT, SPRAS, LIFSP)
+            description: "Primary Key"
+            tests:
+              - not_null
+              - unique
