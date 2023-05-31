@@ -43,16 +43,8 @@ Agg_KNVP: Distinct of Loser (KUNN2) And Winner (KUNNR)
                kunn2_c,
                kunnr_c,
                kunnr_c_count,
-               rnk
-          from (
-                select mandt,
-                       kunn2_c,
-                       kunnr_c,
-                       kunnr_c_count,
-                       row_number() over (partition by kunn2_c order by kunnr_c asc) as rnk
-                  from jnr_
-               ) rnk__inner
-         where rnk__inner.rnk <= 100
+               row_number() over (partition by kunn2_c order by kunnr_c asc) as rnk
+          from jnr_ qualify rnk <= 100
        ) select mandt as client,
        kunn2_c as losercustomernumber,
        kunnr_c as winnercustomernumber,

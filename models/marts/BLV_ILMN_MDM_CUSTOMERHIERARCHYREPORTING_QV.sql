@@ -35,9 +35,9 @@ Join_2: In case if all the CALC column are null or blank then put customer numbe
                customernumber, 
                count(customernumber) as agg_customercount 
           from a_createmapcolumn 
-        group by client, 
-                 customernumber
-		having agg_customercount = 1
+         group by client, 
+                  customernumber 
+        having agg_customercount = 1
        ), 
        aggregation_3 as (
         select client, 
@@ -45,8 +45,8 @@ Join_2: In case if all the CALC column are null or blank then put customer numbe
                count(customernumber) as agg_customercount, 
                cast(to_number(agg_customercount) as INTEGER) as calc_availablehierarchycount 
           from a_createmapcolumn 
-        group by client, 
-                 customernumber 
+         group by client, 
+                  customernumber 
         having calc_availablehierarchycount > 1
        ), 
        join_1 as (
@@ -81,10 +81,10 @@ Join_2: In case if all the CALC column are null or blank then put customer numbe
                p_custname.mandt as client, 
                p_custname.kunnr as customernumber, 
                p_custname.name as customername, 
-               left(cast(iff((calc_globalgroupingnumber_hide = '' or (calc_globalgroupingnumber_hide is null)) and (calc_nationalgroupingnumber_hide = '' or (calc_nationalgroupingnumber_hide is null)) and (calc_salesgroupingnumber_hide = '' or (calc_salesgroupingnumber_hide is null)),customernumber,calc_salesgroupingnumber_hide) as NVARCHAR), 10) as salesgroupingnumber, 
-               left(cast(iff((calc_globalgroupingnumber_hide = '' or (calc_globalgroupingnumber_hide is null)) and (calc_nationalgroupingnumber_hide = '' or (calc_nationalgroupingnumber_hide is null)) and (calc_salesgroupingnumber_hide = '' or (calc_salesgroupingnumber_hide is null)),customernumber,calc_nationalgroupingnumber_hide) as NVARCHAR), 10) as nationalgroupingnumber, 
-               left(cast(iff((calc_globalgroupingnumber_hide = '' or (calc_globalgroupingnumber_hide is null)) and (calc_nationalgroupingnumber_hide = '' or (calc_nationalgroupingnumber_hide is null)) and (calc_salesgroupingnumber_hide = '' or (calc_salesgroupingnumber_hide is null)),'',calc_globalgroupingnumber_hide) as NVARCHAR), 10) as globalgroupingnumber,
-               cast(iff((calc_availablehierarchycount_hide is null),0,calc_availablehierarchycount_hide) as INTEGER) as availablehierarchycount
+               left(cast(iff((union_1.calc_globalgroupingnumber_hide = '' or (union_1.calc_globalgroupingnumber_hide is null)) and (union_1.calc_nationalgroupingnumber_hide = '' or (union_1.calc_nationalgroupingnumber_hide is null)) and (union_1.calc_salesgroupingnumber_hide = '' or (union_1.calc_salesgroupingnumber_hide is null)),union_1.customernumber,union_1.calc_salesgroupingnumber_hide) as NVARCHAR), 10) as salesgroupingnumber, 
+               left(cast(iff((union_1.calc_globalgroupingnumber_hide = '' or (union_1.calc_globalgroupingnumber_hide is null)) and (union_1.calc_nationalgroupingnumber_hide = '' or (union_1.calc_nationalgroupingnumber_hide is null)) and (union_1.calc_salesgroupingnumber_hide = '' or (union_1.calc_salesgroupingnumber_hide is null)),union_1.customernumber,union_1.calc_nationalgroupingnumber_hide) as NVARCHAR), 10) as nationalgroupingnumber, 
+               left(cast(iff((union_1.calc_globalgroupingnumber_hide = '' or (union_1.calc_globalgroupingnumber_hide is null)) and (union_1.calc_nationalgroupingnumber_hide = '' or (union_1.calc_nationalgroupingnumber_hide is null)) and (union_1.calc_salesgroupingnumber_hide = '' or (union_1.calc_salesgroupingnumber_hide is null)),'',union_1.calc_globalgroupingnumber_hide) as NVARCHAR), 10) as globalgroupingnumber,
+               cast(iff((union_1.calc_availablehierarchycount_hide is null),0,union_1.calc_availablehierarchycount_hide) as INTEGER) as availablehierarchycount
           from union_1
          right outer join p_custname
             on union_1.client = p_custname.mandt

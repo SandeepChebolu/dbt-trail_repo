@@ -15,7 +15,7 @@ with projection_marketsegment_tf as (
                percent_allocation__c,
                sequence,
                precedence
-          from {{ ref('BLV_MKTG_SFDCACCOUNTMARKETSEGMENT_TF') }}
+          from table({{ source('','MKTG_SFDCAccountMarketSegment_TF') }}())
        ),
        proj_user as (
         select meta_iud_flg,

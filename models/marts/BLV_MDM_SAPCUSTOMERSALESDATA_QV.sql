@@ -1,8 +1,8 @@
 with dd07t_source as (
-        select domname,
+        select domvalue_l,
+               ddlanguage,
                ddtext,
-               domvalue_l,
-               ddlanguage
+               domname
           from {{ ref('DLV_STAGING_DD07T') }}
        ),
        projection_1 as (

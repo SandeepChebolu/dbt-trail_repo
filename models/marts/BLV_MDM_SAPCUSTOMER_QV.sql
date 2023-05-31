@@ -1,7 +1,7 @@
 with tbrct_source as (
         select spras,
-               vtext,
                braco,
+               vtext,
                mandt
           from {{ ref('DLV_STAGING_TBRCT') }}
        ),
